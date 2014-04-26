@@ -267,8 +267,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b933d79988a624405b43ff0fb8c3d527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinations: []
-  currentDest: {fileID: 0}
+  destinations:
+  - {fileID: 582022781}
+  - {fileID: 973833183}
+  currentDestIndex: 0
 --- !u!195 &134611203
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -397,6 +399,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 582022782}
   - 135: {fileID: 582022785}
+  - 114: {fileID: 582022783}
   m_Layer: 0
   m_Name: nav0
   m_TagString: Untagged
@@ -415,6 +418,17 @@ Transform:
   m_LocalScale: {x: 1.93007231, y: 1.93007231, z: 1.93007231}
   m_Children: []
   m_Father: {fileID: 523078142}
+--- !u!114 &582022783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 582022781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79de31dde1348491f8c7da34e162f0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &582022785
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -902,6 +916,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 815705939}
   - 135: {fileID: 815705942}
+  - 114: {fileID: 815705940}
   m_Layer: 0
   m_Name: nav3
   m_TagString: Untagged
@@ -920,6 +935,17 @@ Transform:
   m_LocalScale: {x: 1.93007195, y: 1.93007195, z: 1.93007195}
   m_Children: []
   m_Father: {fileID: 523078142}
+--- !u!114 &815705940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 815705938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79de31dde1348491f8c7da34e162f0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &815705942
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -941,6 +967,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 964066624}
   - 135: {fileID: 964066622}
+  - 114: {fileID: 964066620}
   m_Layer: 0
   m_Name: nav2
   m_TagString: Untagged
@@ -948,6 +975,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &964066620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 964066619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79de31dde1348491f8c7da34e162f0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &964066622
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1084,6 +1122,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 973833184}
   - 135: {fileID: 973833187}
+  - 114: {fileID: 973833185}
   m_Layer: 0
   m_Name: nav1
   m_TagString: Untagged
@@ -1102,6 +1141,17 @@ Transform:
   m_LocalScale: {x: 1.93007195, y: 1.93007195, z: 1.93007195}
   m_Children: []
   m_Father: {fileID: 523078142}
+--- !u!114 &973833185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 973833183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79de31dde1348491f8c7da34e162f0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &973833187
 SphereCollider:
   m_ObjectHideFlags: 0
