@@ -23,13 +23,13 @@ public class PlayerController : MonoBehaviour {
 		float moveVertical = Input.GetAxis ("Vertical");
 
 		if (moveHorizontal < 0)
-			transform.eulerAngles = new Vector3(0f, -180f, 0f);
+			transform.eulerAngles = new Vector3(45f, -180f, 0f);
 		else if (moveHorizontal > 0)//			transform.RotateAround(Vector3.zero, Vector3.up, 0f);
-			transform.eulerAngles = new Vector3(0f, 0f, 0f);
+			transform.eulerAngles = new Vector3(45f, 0f, 0f);
 		else if (moveVertical < 0)
-			transform.eulerAngles = new Vector3(0f, -270f, 0f);
+			transform.eulerAngles = new Vector3(45f, -270f, 0f);
 		else if (moveVertical > 0)
-			transform.eulerAngles = new Vector3(0f, -90f, 0f);
+			transform.eulerAngles = new Vector3(45f, -90f, 0f);
 
 		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
 
