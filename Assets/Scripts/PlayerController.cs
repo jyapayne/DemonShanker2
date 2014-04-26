@@ -39,8 +39,4 @@ public class PlayerController : MonoBehaviour {
 		rigidbody.freezeRotation = true;
 		rigidbody.position.Normalize ();
 	}
-
-	void Shank(){
-
-	}
 }
