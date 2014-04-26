@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-	public float speed;
+	public float speed = 10;
 	public float nextFire;
 	public float fireRate;
 	public GameObject shank;
