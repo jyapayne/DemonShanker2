@@ -376,7 +376,7 @@ MonoBehaviour:
   speed: 10
   nextFire: 1
   fireRate: 1
-  shank: {fileID: 0}
+  shank: {fileID: 100000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
   shankSpawn: {fileID: 2119789981}
 --- !u!1 &1043241741
 GameObject:
@@ -821,7 +821,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2119789980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .947009742, y: .199999988, z: 0}
+  m_LocalPosition: {x: 1.38053739, y: .199999988, z: 0}
   m_LocalScale: {x: .100000001, y: .100000001, z: .100000001}
   m_Children: []
   m_Father: {fileID: 972571124}
