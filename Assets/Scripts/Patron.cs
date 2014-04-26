@@ -11,4 +11,19 @@ public class Patron : MonoBehaviour {
         nva.SetDestination(pos);
         nva.updateRotation = false;
     }
+
+	void OnTriggerEnter(Collider other) {
+
+		//Instantiate(explosion, transform.position, transform.rotation);
+		if (other.tag == "Shank") 
+		{
+			//Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
+			Destroy(gameObject);
+		}
+		
+//		gameController.AddScore (scoreValue);
+//		
+//		Destroy (other.gameObject);
+//		Destroy (gameObject);
+	}
 }
