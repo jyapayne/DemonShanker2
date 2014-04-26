@@ -3,13 +3,24 @@ using System.Collections;
 
 public class Patron : MonoBehaviour {
 
-    Vector3 dest;
+    public GameObject[] destinations;
+    public int currentDestIndex = 0;
+
+    private NavMeshAgent nva;
 
     void Awake() {
-        Vector3 pos = GameObject.Find("node3").transform.position;
-        NavMeshAgent nva = GetComponent<NavMeshAgent>();
-        nva.SetDestination(pos);
+        nva = GetComponent<NavMeshAgent>();
         nva.updateRotation = false;
+        nva.SetDestination(destinations[0].transform.position);
+    }
+
+    public void NextDest() {
+        if(currentDestIndex + 1 < destinations.Length)
+            ++currentDestIndex;
+        else
+            currentDestIndex = 0;
+
+        nva.SetDestination(destinations[currentDestIndex].transform.position);
     }
 
 	void OnTriggerEnter(Collider other) {

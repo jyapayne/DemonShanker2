@@ -217,7 +217,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 134611195}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 012328ad8a154434cba351198ab57633, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -240,7 +240,7 @@ Transform:
   m_LocalPosition: {x: -5.53722095, y: 10.147995, z: 7.53864098}
   m_LocalScale: {x: 2.19080043, y: 3.67920685, z: 2.19080043}
   m_Children: []
-  m_Father: {fileID: 704683992}
+  m_Father: {fileID: 0}
 --- !u!54 &134611201
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -267,6 +267,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b933d79988a624405b43ff0fb8c3d527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destinations:
+  - {fileID: 582022781}
+  - {fileID: 973833183}
+  currentDestIndex: 0
 --- !u!195 &134611203
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -393,7 +397,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 523078142}
   m_Layer: 0
-  m_Name: nodes
+  m_Name: Nav Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -422,11 +426,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 582022782}
-  - 33: {fileID: 582022786}
   - 135: {fileID: 582022785}
-  - 23: {fileID: 582022784}
+  - 114: {fileID: 582022783}
   m_Layer: 0
-  m_Name: node0
+  m_Name: nav0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -443,27 +446,17 @@ Transform:
   m_LocalScale: {x: 1.93007231, y: 1.93007231, z: 1.93007231}
   m_Children: []
   m_Father: {fileID: 523078142}
---- !u!23 &582022784
-Renderer:
+--- !u!114 &582022783
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 582022781}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79de31dde1348491f8c7da34e162f0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &582022785
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -476,13 +469,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: .5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &582022786
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 582022781}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &680206382
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +603,6 @@ Transform:
   - {fileID: 1951656536}
   - {fileID: 2017533897}
   - {fileID: 1236459784}
-  - {fileID: 134611200}
   m_Father: {fileID: 0}
 --- !u!1 &710538756
 GameObject:
@@ -1028,11 +1013,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 815705939}
-  - 33: {fileID: 815705943}
   - 135: {fileID: 815705942}
-  - 23: {fileID: 815705941}
+  - 114: {fileID: 815705940}
   m_Layer: 0
-  m_Name: node3
+  m_Name: nav3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1046,30 +1030,20 @@ Transform:
   m_GameObject: {fileID: 815705938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.70057106, y: 4.82923508, z: 10.7952461}
-  m_LocalScale: {x: 3.55101466, y: 3.55101466, z: 3.55101466}
+  m_LocalScale: {x: 1.93007195, y: 1.93007195, z: 1.93007195}
   m_Children: []
   m_Father: {fileID: 523078142}
---- !u!23 &815705941
-Renderer:
+--- !u!114 &815705940
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 815705938}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79de31dde1348491f8c7da34e162f0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &815705942
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1082,13 +1056,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: .5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &815705943
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 815705938}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &964066619
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,37 +1064,26 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 964066624}
-  - 33: {fileID: 964066623}
   - 135: {fileID: 964066622}
-  - 23: {fileID: 964066621}
+  - 114: {fileID: 964066620}
   m_Layer: 0
-  m_Name: node2
+  m_Name: nav2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!23 &964066621
-Renderer:
+--- !u!114 &964066620
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 964066619}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79de31dde1348491f8c7da34e162f0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &964066622
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1140,13 +1096,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: .5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &964066623
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 964066619}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &964066624
 Transform:
   m_ObjectHideFlags: 0
@@ -1242,11 +1191,10 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 973833184}
-  - 33: {fileID: 973833188}
   - 135: {fileID: 973833187}
-  - 23: {fileID: 973833186}
+  - 114: {fileID: 973833185}
   m_Layer: 0
-  m_Name: node1
+  m_Name: nav1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1263,27 +1211,17 @@ Transform:
   m_LocalScale: {x: 1.93007195, y: 1.93007195, z: 1.93007195}
   m_Children: []
   m_Father: {fileID: 523078142}
---- !u!23 &973833186
-Renderer:
+--- !u!114 &973833185
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 973833183}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79de31dde1348491f8c7da34e162f0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &973833187
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1296,13 +1234,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: .5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &973833188
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 973833183}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1043241741
 GameObject:
   m_ObjectHideFlags: 0
