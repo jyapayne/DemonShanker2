@@ -169,6 +169,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 56874333}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &57666822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
+  m_PrefabInternal: {fileID: 296847678}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 57666823}
+  - 65: {fileID: 57666826}
+  m_Layer: 0
+  m_Name: Shank Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &57666823
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
+  m_PrefabInternal: {fileID: 296847678}
+  m_GameObject: {fileID: 57666822}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .68853569, y: .259010136, z: 0}
+  m_LocalScale: {x: 1, y: .0909090862, z: .0500000007}
+  m_Children: []
+  m_Father: {fileID: 745975992}
+--- !u!65 &57666826
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 6500000, guid: 0dd5d3e41887306468e6f9dd9d58b975,
+    type: 2}
+  m_PrefabInternal: {fileID: 296847678}
+  m_GameObject: {fileID: 57666822}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &134611195
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,6 +339,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 146718572}
+  - 114: {fileID: 146718573}
+  - 54: {fileID: 146718574}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -319,6 +361,105 @@ Transform:
   - {fileID: 745975992}
   - {fileID: 1605196874}
   m_Father: {fileID: 0}
+--- !u!114 &146718573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 146718571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03d06e7abe7e0453ab6f0366aebcdec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  nextFire: 1
+  fireRate: 1
+  shank: {fileID: 100000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
+  playerAngle: {fileID: 745975992}
+  shankSpawn: {fileID: 57666823}
+--- !u!54 &146718574
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 146718571}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!1001 &296847678
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 745975992}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .68853569
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .259010136
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
+      propertyPath: m_Name
+      value: Shank Spawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
+      propertyPath: m_LocalScale.y
+      value: .0909090862
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
+      propertyPath: m_LocalScale.z
+      value: .0500000007
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11400000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
+    - {fileID: 2300000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
+    - {fileID: 3300000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
+  m_RootGameObject: {fileID: 57666822}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &330466711
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,7 +724,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &704683992
 Transform:
   m_ObjectHideFlags: 0
@@ -690,7 +831,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 745975988}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -733,8 +874,9 @@ Transform:
   m_GameObject: {fileID: 745975988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -.253254414, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1.10000002, z: 1}
-  m_Children: []
+  m_LocalScale: {x: 2, y: 1.10000002, z: 2}
+  m_Children:
+  - {fileID: 57666823}
   m_Father: {fileID: 146718572}
 --- !u!1 &768198790
 GameObject:
@@ -1182,6 +1324,7 @@ MonoBehaviour:
   nextFire: 1
   fireRate: 1
   shank: {fileID: 100000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
+  playerAngle: {fileID: 0}
   shankSpawn: {fileID: 47264523}
 --- !u!1 &973833183
 GameObject:
@@ -2324,7 +2467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae2ca4205f0f47a4fa626bd81ae8c2da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 972571120}
+  player: {fileID: 146718571}
 --- !u!1 &2017533891
 GameObject:
   m_ObjectHideFlags: 0
