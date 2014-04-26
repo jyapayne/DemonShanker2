@@ -5,17 +5,28 @@ public class PlayerController : MonoBehaviour {
 
 	public float speed = 10;
 	public float nextFire;
-	public float fireRate;
+	public float delay;
 	public GameObject shank;
 	public Transform playerAngle;
 	public Transform shankSpawn;
+	public GameObject vvAura;
+	public int swigCounter;
 
 	void Update()
 	{
+		int swigs = 0;
+
 		if (Input.GetButton("Fire1") && Time.time > nextFire) 
 		{
-			nextFire = Time.time + fireRate;
+			nextFire = Time.time + delay;
 			Instantiate(shank, shankSpawn.position, playerAngle.rotation);
+		}
+
+		if (Input.GetButton("ActivateVV") && swigs <= swigCounter && Time.time > nextFire)
+		{
+			nextFire = Time.time + delay * 2;
+			Instantiate (vvAura, rigidbody.position, rigidbody.rotation);
+			swigs++;
 		}
 	}
 

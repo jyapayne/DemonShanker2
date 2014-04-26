@@ -216,7 +216,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: cf27db5b36385ff4eb67c47fd9d428f9, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -285,6 +285,8 @@ MonoBehaviour:
   - {fileID: 582022781}
   - {fileID: 973833183}
   currentDestIndex: 0
+  evilMat: {fileID: 2100000, guid: f259c2b0e77aaec4da868f7cc2a94f99, type: 2}
+  neutralMat: {fileID: 2100000, guid: cf27db5b36385ff4eb67c47fd9d428f9, type: 2}
 --- !u!195 &134611203
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -348,10 +350,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   nextFire: 1
-  fireRate: 1
+  delay: 1
   shank: {fileID: 100000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
   playerAngle: {fileID: 745975992}
   shankSpawn: {fileID: 57666823}
+  vvAura: {fileID: 100000, guid: 54b915706f095a04ebcad7cd6fe3550c, type: 2}
+  swigCounter: 2
 --- !u!54 &146718574
 Rigidbody:
   m_ObjectHideFlags: 0

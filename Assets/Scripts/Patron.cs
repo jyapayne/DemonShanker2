@@ -5,6 +5,8 @@ public class Patron : MonoBehaviour {
 
     public GameObject[] destinations;
     public int currentDestIndex = 0;
+	public Material evilMat;
+	public Material neutralMat;
 
     private NavMeshAgent nva;
 
@@ -30,6 +32,10 @@ public class Patron : MonoBehaviour {
 		{
 			//Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
 			Destroy(gameObject);
+		}
+
+		if (other.tag == "VVAura") {
+			renderer.material = evilMat;
 		}
 		
 //		gameController.AddScore (scoreValue);
