@@ -35,7 +35,6 @@ public class PlayerController : MonoBehaviour {
 		{
 			nextFire = Time.time + delay;
 			Instantiate(shank, shankSpawn.position, playerAngle.rotation);
-            //animator.SetInteger("state", 3);
             animator.Play("player_shank");
 		}
 
@@ -54,11 +53,9 @@ public class PlayerController : MonoBehaviour {
 
         if (Mathf.Approximately(moveHorizontal, 0) &&
             Mathf.Approximately(moveVertical, 0)) {
-            //animator.SetInteger("state", 0);
-            //animator.Play("player_idle");
+            animator.SetBool("isWalking", false);
         } else {
-            //animator.SetInteger("state", 2);
-            animator.Play("player_walk");
+            animator.SetBool("isWalking", true);
         }
 
 		if (moveHorizontal < 0)
