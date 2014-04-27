@@ -5,13 +5,14 @@ public class StartHandler : MonoBehaviour {
 
 	public Texture normalButton;
 	public Texture hoverButton;
+	public GUITexture guiButton;
 
 	void OnMouseEnter() {
-		guiTexture.texture = hoverButton;
+		guiButton.texture = hoverButton;
 	}
 
 	void OnMouseExit() {
-		guiTexture.texture = normalButton;
+		guiButton.texture = normalButton;
 	}
 
 	void OnMouseDown() {
