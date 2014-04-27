@@ -13,7 +13,7 @@ public class Patron : MonoBehaviour {
     void Awake() {
         nva = GetComponent<NavMeshAgent>();
         nva.updateRotation = false;
-        nva.SetDestination(destinations[0].transform.position);
+        nva.SetDestination(destinations[currentDestIndex].transform.position);
     }
 
     public void NextDest() {
