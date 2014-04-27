@@ -13,6 +13,13 @@ public class PlayerController : MonoBehaviour {
 	public int swigCounter;
 	private int swigs = 0;
 
+    private Animator animator;
+
+    void Awake()
+    {
+        animator = GameObject.Find("PlayerSprite").GetComponent<Animator>();
+    }
+
 	void Update()
 	{
 		if (Input.GetButton("Fire1") && Time.time > nextFire) 
@@ -20,6 +27,8 @@ public class PlayerController : MonoBehaviour {
 			//audio.Play ();
 			nextFire = Time.time + delay;
 			Instantiate(shank, shankSpawn.position, playerAngle.rotation);
+            //animator.SetInteger("state", 3);
+            animator.Play("player_shank");
 		}
 
 		if (Input.GetButton("ActivateVV") && swigs < swigCounter && Time.time > nextFire)
@@ -27,12 +36,23 @@ public class PlayerController : MonoBehaviour {
 			nextFire = Time.time + delay * 2;
 			Instantiate (vvAura, rigidbody.position, rigidbody.rotation);
 			swigs++;
+            //animator.SetInteger("state", 1);
+            animator.Play("player_swig");
 		}
 	}
 
 	void FixedUpdate() {
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
+
+        if (Mathf.Approximately(moveHorizontal, 0) &&
+            Mathf.Approximately(moveVertical, 0)) {
+            //animator.SetInteger("state", 0);
+            //animator.Play("player_idle");
+        } else {
+            //animator.SetInteger("state", 2);
+            animator.Play("player_walk");
+        }
 
 		if (moveHorizontal < 0)
 			playerAngle.eulerAngles = new Vector3(0f, -180f, 0f);
