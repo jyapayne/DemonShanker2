@@ -5,8 +5,6 @@ public class WalkAI : MonoBehaviour {
 
 	public GameObject[] destinations;
 	public int currentDestIndex = 0;
-	public Material evilMat;
-	public Material neutralMat;
 	
 	private NavMeshAgent nva;
 	

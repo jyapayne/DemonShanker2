@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Demon : MonoBehaviour {
 
+	public Renderer characterSprite;
+
 	void OnTriggerEnter(Collider other) {
 		
 		//Instantiate(explosion, transform.position, transform.rotation);
@@ -13,7 +15,7 @@ public class Demon : MonoBehaviour {
 		}
 		
 		if (other.tag == "VVAura") {
-			renderer.material.color = Color.red;
+			characterSprite.renderer.material.color = Color.red;
 		}
 	}
 }

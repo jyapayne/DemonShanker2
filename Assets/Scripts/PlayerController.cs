@@ -68,11 +68,12 @@ public class PlayerController : MonoBehaviour {
 			playerAngle.eulerAngles = new Vector3(0f, -270f, 0f);
 		if (moveVertical > 0)
 			playerAngle.eulerAngles = new Vector3(0f, -90f, 0f);
+	
+//		rigidbody.MovePosition (rigidbody.position + movement * speed * Time.deltaTime);
+//		rigidbody.position.Normalize ();
 
 		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
-
-		rigidbody.MovePosition (rigidbody.position + movement * speed * Time.deltaTime);
-		rigidbody.position.Normalize ();
+		rigidbody.velocity = movement * speed;
 
 		rigidbody.freezeRotation = true;
 	}
