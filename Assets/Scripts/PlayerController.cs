@@ -66,34 +66,39 @@ public class PlayerController : MonoBehaviour {
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
 
-		if (!Mathf.Approximately (moveHorizontal, 0)) { // walking sideways
-			animator.SetBool("isWalking", true);
-			animator.SetBool("isWalkingUp", false);
-		}
-		else if (!Mathf.Approximately(moveVertical, 0)){ // Walking up
+		if (moveVertical > 0){ // Walking up
 			animator.SetBool("isWalkingUp", true);
 			animator.SetBool("isWalking", false);
+		}
+		else if (!Mathf.Approximately (moveHorizontal, 0) || moveVertical < 0) { // walking sideways
+			animator.SetBool("isWalking", true);
+			animator.SetBool("isWalkingUp", false);
 		}
 		else {
 			animator.SetBool("isWalking", false);
 			animator.SetBool("isWalkingUp", false);
 		}
 
-		if (moveHorizontal < 0)	{
+		if (moveHorizontal < 0 && moveVertical > 0) // left up
+			playerAngle.eulerAngles = new Vector3(0f, -135, 0f);
+		else if (moveHorizontal < 0 && moveVertical < 0) // left down
+			playerAngle.eulerAngles = new Vector3(0f, -225f, 0f);
+		else if (moveHorizontal > 0 && moveVertical > 0) //right up
+			playerAngle.eulerAngles = new Vector3(0f, -45f, 0f);
+		else if (moveHorizontal > 0 && moveVertical < 0) //right down
+			playerAngle.eulerAngles = new Vector3(0f, 45f, 0f);
+		else if (moveHorizontal < 0)	{ // Stab left
 			playerAngle.eulerAngles = new Vector3(0f, -180f, 0f);
 			MakePlayerSpriteFace(Direction.Left);
 		}
-		if (moveHorizontal > 0) {
+		else if (moveHorizontal > 0) { // Stab right
 			playerAngle.eulerAngles = new Vector3 (0f, 0f, 0f);
 			MakePlayerSpriteFace(Direction.Right);
 		}
-		if (moveVertical < 0)
+		else if (moveVertical < 0) // Stab down
 			playerAngle.eulerAngles = new Vector3(0f, -270f, 0f);
-		if (moveVertical > 0)
+		else if (moveVertical > 0) // Stab up
 			playerAngle.eulerAngles = new Vector3(0f, -90f, 0f);
-	
-//		rigidbody.MovePosition (rigidbody.position + movement * speed * Time.deltaTime);
-//		rigidbody.position.Normalize ();
 
 		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
 		rigidbody.velocity = movement * speed;

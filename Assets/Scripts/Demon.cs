@@ -4,6 +4,16 @@ using System.Collections;
 public class Demon : MonoBehaviour {
 
 	public Renderer characterSprite;
+	private GameController gameController;
+	
+	void Start() {
+		GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+		
+		if (gameControllerObject != null)
+			gameController = gameControllerObject.GetComponent <GameController> ();
+		else
+			Debug.Log("Cannot find GameController script.");
+	}
 
 	void OnTriggerEnter(Collider other) {
 		
@@ -12,6 +22,7 @@ public class Demon : MonoBehaviour {
 		{
 			//Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
 			Destroy(gameObject);
+			gameController.AddScore();
 		}
 		
 		if (other.tag == "VVAura") {
