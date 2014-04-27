@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour {
 	public GameObject vvAura;
 	public int swigCounter;
 	private GameController gameController;
+	public GameObject playerSprite;
+
+	enum Direction {Left, Right};
 
 	void Start() {
 		GameObject gameControllerObject = GameObject.FindWithTag("GameController");
@@ -28,6 +31,17 @@ public class PlayerController : MonoBehaviour {
     {
         animator = GameObject.Find("PlayerSprite").GetComponent<Animator>();
     }
+
+	void MakePlayerSpriteFace(Direction dir)
+	{
+		Vector3 scaleVec = playerSprite.transform.localScale;
+		if (dir == Direction.Left) {
+			scaleVec.x = -1;
+		} else if (dir == Direction.Right) {
+			scaleVec.x = 1;
+		}
+		playerSprite.transform.localScale = scaleVec;
+	}
 
 	void Update()
 	{
@@ -61,9 +75,12 @@ public class PlayerController : MonoBehaviour {
 
 		if (moveHorizontal < 0)	{
 			playerAngle.eulerAngles = new Vector3(0f, -180f, 0f);
+			MakePlayerSpriteFace(Direction.Left);
 		}
-		if (moveHorizontal > 0)
-			playerAngle.eulerAngles = new Vector3(0f, 0f, 0f);
+		if (moveHorizontal > 0) {
+			playerAngle.eulerAngles = new Vector3 (0f, 0f, 0f);
+			MakePlayerSpriteFace(Direction.Right);
+		}
 		if (moveVertical < 0)
 			playerAngle.eulerAngles = new Vector3(0f, -270f, 0f);
 		if (moveVertical > 0)
