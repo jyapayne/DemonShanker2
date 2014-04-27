@@ -468,6 +468,7 @@ MonoBehaviour:
   shankSpawn: {fileID: 57666823}
   vvAura: {fileID: 100000, guid: 54b915706f095a04ebcad7cd6fe3550c, type: 2}
   swigCounter: 2
+  playerSprite: {fileID: 1605196873}
 --- !u!54 &146718574
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1127,7 +1128,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: 3
     m_Strength: 1
     m_Bias: .0500000007
