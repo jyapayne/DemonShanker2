@@ -152,7 +152,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 57666823}
   - 65: {fileID: 57666826}
-  - 82: {fileID: 57666824}
   m_Layer: 0
   m_Name: Shank Spawn
   m_TagString: Untagged
@@ -171,65 +170,6 @@ Transform:
   m_LocalScale: {x: 1, y: .0909090862, z: .0500000007}
   m_Children: []
   m_Father: {fileID: 745975992}
---- !u!82 &57666824
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 8200000, guid: 0dd5d3e41887306468e6f9dd9d58b975,
-    type: 2}
-  m_PrefabInternal: {fileID: 296847678}
-  m_GameObject: {fileID: 57666822}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: b189fb0007b0fc148a287b20274b0b51, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!65 &57666826
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -377,7 +317,6 @@ GameObject:
   - 4: {fileID: 146718572}
   - 114: {fileID: 146718573}
   - 54: {fileID: 146718574}
-  - 82: {fileID: 146718575}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -432,64 +371,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!82 &146718575
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 146718571}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: b189fb0007b0fc148a287b20274b0b51, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
 --- !u!1001 &296847678
 Prefab:
   m_ObjectHideFlags: 0
@@ -553,6 +434,7 @@ Prefab:
     - {fileID: 11400000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
     - {fileID: 2300000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
     - {fileID: 3300000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
+    - {fileID: 8200000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0dd5d3e41887306468e6f9dd9d58b975, type: 2}
   m_RootGameObject: {fileID: 57666822}
   m_IsPrefabParent: 0
@@ -987,6 +869,7 @@ GameObject:
   - 65: {fileID: 768198793}
   - 23: {fileID: 768198792}
   - 95: {fileID: 768198795}
+  - 114: {fileID: 768198796}
   m_Layer: 0
   m_Name: North Wall
   m_TagString: Untagged
@@ -1059,6 +942,20 @@ Animator:
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
   m_HasTransformHierarchy: 1
+--- !u!114 &768198796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 768198790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704d6d277dc28fa4c8a6a28688efd5a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columns: 1
+  rows: 2
+  framesPerSecond: 10
 --- !u!1 &787766216
 GameObject:
   m_ObjectHideFlags: 0
