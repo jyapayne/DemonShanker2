@@ -3,7 +3,7 @@ using System.Collections;
 
 public class NavPoint : MonoBehaviour {
     void OnTriggerEnter(Collider other) {
-        Patron p = other.gameObject.GetComponent<Patron>();
+        WalkAI p = other.gameObject.GetComponent<WalkAI>();
         if(p != null)
             p.NextDest();
     }

@@ -58,8 +58,10 @@ public class PlayerController : MonoBehaviour {
             animator.SetBool("isWalking", true);
         }
 
-		if (moveHorizontal < 0)
+		if (moveHorizontal < 0)	{
 			playerAngle.eulerAngles = new Vector3(0f, -180f, 0f);
+
+		}
 		if (moveHorizontal > 0)
 			playerAngle.eulerAngles = new Vector3(0f, 0f, 0f);
 		if (moveVertical < 0)
@@ -70,8 +72,8 @@ public class PlayerController : MonoBehaviour {
 		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
 
 		rigidbody.MovePosition (rigidbody.position + movement * speed * Time.deltaTime);
+		rigidbody.position.Normalize ();
 
 		rigidbody.freezeRotation = true;
-		rigidbody.position.Normalize ();
 	}
 }
