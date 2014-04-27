@@ -11,18 +11,18 @@ public class PlayerController : MonoBehaviour {
 	public Transform shankSpawn;
 	public GameObject vvAura;
 	public int swigCounter;
+	private int swigs = 0;
 
 	void Update()
 	{
-		int swigs = 0;
-
 		if (Input.GetButton("Fire1") && Time.time > nextFire) 
 		{
+			//audio.Play ();
 			nextFire = Time.time + delay;
 			Instantiate(shank, shankSpawn.position, playerAngle.rotation);
 		}
 
-		if (Input.GetButton("ActivateVV") && swigs <= swigCounter && Time.time > nextFire)
+		if (Input.GetButton("ActivateVV") && swigs < swigCounter && Time.time > nextFire)
 		{
 			nextFire = Time.time + delay * 2;
 			Instantiate (vvAura, rigidbody.position, rigidbody.rotation);
