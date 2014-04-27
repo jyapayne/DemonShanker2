@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AnimateSprite : MonoBehaviour {
+public class AnimateTexture : MonoBehaviour {
 
 	public int columns = 2;
 	public int rows = 2;
@@ -31,10 +31,11 @@ public class AnimateSprite : MonoBehaviour {
 			//split into x and y indexes
 			Vector2 offset = new Vector2((float)index / columns - (index / columns), //x index
 			                             (index / columns) / (float)rows);          //y index
-
+			
 			renderer.sharedMaterial.SetTextureOffset("_MainTex", offset);
 			
 			yield return new WaitForSeconds(1f / framesPerSecond);
 		}
+		
 	}
 }
