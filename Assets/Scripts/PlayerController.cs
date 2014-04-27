@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour {
 		{
 			nextFire = Time.time + delay;
 			Instantiate(shank, shankSpawn.position, playerAngle.rotation);
+			shankSpawn.audio.Play ();
             animator.Play("player_shank");
 		}
 
@@ -60,7 +61,6 @@ public class PlayerController : MonoBehaviour {
 
 		if (moveHorizontal < 0)	{
 			playerAngle.eulerAngles = new Vector3(0f, -180f, 0f);
-
 		}
 		if (moveHorizontal > 0)
 			playerAngle.eulerAngles = new Vector3(0f, 0f, 0f);
