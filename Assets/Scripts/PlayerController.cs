@@ -66,17 +66,13 @@ public class PlayerController : MonoBehaviour {
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
 
-//        if (Mathf.Approximately(moveHorizontal, 0) &&
-//            Mathf.Approximately(moveVertical, 0)) {
-//            animator.SetBool("isWalking", false);
-//        } else {
-//            animator.SetBool("isWalking", true);
-//        }
-		if (!Mathf.Approximately (moveHorizontal, 0)) {
+		if (!Mathf.Approximately (moveHorizontal, 0)) { // walking sideways
 			animator.SetBool("isWalking", true);
+			animator.SetBool("isWalkingUp", false);
 		}
-		else if (!Mathf.Approximately(moveVertical, 0)) {
+		else if (!Mathf.Approximately(moveVertical, 0)){ // Walking up
 			animator.SetBool("isWalkingUp", true);
+			animator.SetBool("isWalking", false);
 		}
 		else {
 			animator.SetBool("isWalking", false);
