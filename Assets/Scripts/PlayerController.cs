@@ -11,7 +11,16 @@ public class PlayerController : MonoBehaviour {
 	public Transform shankSpawn;
 	public GameObject vvAura;
 	public int swigCounter;
-	private int swigs = 0;
+	private GameController gameController;
+
+	void Start() {
+		GameObject gameControllerObject = GameObject.FindWithTag("GameController");
+
+		if (gameControllerObject != null)
+			gameController = gameControllerObject.GetComponent <GameController> ();
+		else
+			Debug.Log("Cannot find GameController script.");
+	}
 
     private Animator animator;
 
@@ -24,19 +33,17 @@ public class PlayerController : MonoBehaviour {
 	{
 		if (Input.GetButton("Fire1") && Time.time > nextFire) 
 		{
-			//audio.Play ();
 			nextFire = Time.time + delay;
 			Instantiate(shank, shankSpawn.position, playerAngle.rotation);
             //animator.SetInteger("state", 3);
             animator.Play("player_shank");
 		}
 
-		if (Input.GetButton("ActivateVV") && swigs < swigCounter && Time.time > nextFire)
+		if (Input.GetButton("ActivateVV") && gameController.swigs > 0 && Time.time > nextFire)
 		{
 			nextFire = Time.time + delay * 2;
 			Instantiate (vvAura, rigidbody.position, rigidbody.rotation);
-			swigs++;
-            //animator.SetInteger("state", 1);
+			gameController.TakeSwig();
             animator.Play("player_swig");
 		}
 	}
@@ -56,11 +63,11 @@ public class PlayerController : MonoBehaviour {
 
 		if (moveHorizontal < 0)
 			playerAngle.eulerAngles = new Vector3(0f, -180f, 0f);
-		else if (moveHorizontal > 0)
+		if (moveHorizontal > 0)
 			playerAngle.eulerAngles = new Vector3(0f, 0f, 0f);
-		else if (moveVertical < 0)
+		if (moveVertical < 0)
 			playerAngle.eulerAngles = new Vector3(0f, -270f, 0f);
-		else if (moveVertical > 0)
+		if (moveVertical > 0)
 			playerAngle.eulerAngles = new Vector3(0f, -90f, 0f);
 
 		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
