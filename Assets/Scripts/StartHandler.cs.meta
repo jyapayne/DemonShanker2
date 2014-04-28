@@ -2,7 +2,10 @@ fileFormatVersion: 2
 guid: 41037e5923310ee4fb43e2da9485d6dc
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - normalButton: {fileID: 2800000, guid: d40467344d238024891b4685f00a717b, type: 3}
+  - hoverButton: {fileID: 2800000, guid: 4e31eb4eaadf3314e8da10b79a0d43fa, type: 3}
+  - guiButton: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

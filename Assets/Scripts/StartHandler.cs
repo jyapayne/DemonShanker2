@@ -3,19 +3,19 @@ using System.Collections;
 
 public class StartHandler : MonoBehaviour {
 
-	public Texture normalButton;
-	public Texture hoverButton;
-	public GUITexture guiButton;
+	public Sprite normalButton;
+	public Sprite hoverButton;
 
 	void OnMouseEnter() {
-		guiButton.texture = hoverButton;
+		guiTexture.texture = hoverButton.texture;
 	}
 
 	void OnMouseExit() {
-		guiButton.texture = normalButton;
+		guiTexture.texture = normalButton.texture;
 	}
 
 	void OnMouseDown() {
 		Application.LoadLevel ("Main");
 	}
+	
 }
