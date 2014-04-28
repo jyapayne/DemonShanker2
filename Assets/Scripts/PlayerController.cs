@@ -60,57 +60,69 @@ public class PlayerController : MonoBehaviour {
 			gameController.TakeSwig();
             animator.Play("player_swig");
 		}
-	}
 
-	void FixedUpdate() {
 		float moveHorizontal = Input.GetAxis ("Horizontal");
 		float moveVertical = Input.GetAxis ("Vertical");
 
-		if (moveVertical > 0){ // Walking up
+		if (moveHorizontal < 0 && moveVertical > 0) { // left up
+			playerAngle.eulerAngles = new Vector3(0f, -135, 0f);
+			MakePlayerSpriteFace(Direction.Left);
 			animator.SetBool("isWalkingUp", true);
 			animator.SetBool("isWalking", false);
 		}
-		else if (!Mathf.Approximately (moveHorizontal, 0) || moveVertical < 0) { // walking sideways
+		else if (moveHorizontal < 0 && moveVertical < 0) {// left down
+			playerAngle.eulerAngles = new Vector3(0f, -225f, 0f);
+			MakePlayerSpriteFace(Direction.Left);
 			animator.SetBool("isWalking", true);
 			animator.SetBool("isWalkingUp", false);
+		}
+		else if (moveHorizontal > 0 && moveVertical > 0) {//right up
+			playerAngle.eulerAngles = new Vector3(0f, -45f, 0f);
+			MakePlayerSpriteFace(Direction.Right);
+			animator.SetBool("isWalkingUp", true);
+			animator.SetBool("isWalking", false);
+		}
+		else if (moveHorizontal > 0 && moveVertical < 0) {//right down
+			playerAngle.eulerAngles = new Vector3(0f, 45f, 0f);
+			MakePlayerSpriteFace(Direction.Right);
+			animator.SetBool("isWalking", true);
+			animator.SetBool("isWalkingUp", false);
+		}
+		else if (moveHorizontal < 0)	{ // Stab left
+			playerAngle.eulerAngles = new Vector3(0f, -180f, 0f);
+			MakePlayerSpriteFace(Direction.Left);
+			animator.SetBool("isWalking", true);
+			animator.SetBool("isWalkingUp", false);
+		}
+		else if (moveHorizontal > 0) { // Stab right
+			playerAngle.eulerAngles = new Vector3 (0f, 0f, 0f);
+			MakePlayerSpriteFace(Direction.Right);
+			animator.SetBool("isWalking", true);
+			animator.SetBool("isWalkingUp", false);
+		}
+		else if (moveVertical < 0) {// Stab down
+			playerAngle.eulerAngles = new Vector3(0f, -270f, 0f);
+			animator.SetBool("isWalking", true);
+			animator.SetBool("isWalkingUp", false);
+		}
+		else if (moveVertical > 0) // Stab up
+		{
+			playerAngle.eulerAngles = new Vector3(0f, -90f, 0f);
+			animator.SetBool("isWalkingUp", true);
+			animator.SetBool("isWalking", false);
 		}
 		else {
 			animator.SetBool("isWalking", false);
 			animator.SetBool("isWalkingUp", false);
 		}
-
-		if (moveHorizontal < 0 && moveVertical > 0) { // left up
-			playerAngle.eulerAngles = new Vector3(0f, -135, 0f);
-			MakePlayerSpriteFace(Direction.Left);
-		}
-		else if (moveHorizontal < 0 && moveVertical < 0) {// left down
-			playerAngle.eulerAngles = new Vector3(0f, -225f, 0f);
-			MakePlayerSpriteFace(Direction.Left);
-		}
-		else if (moveHorizontal > 0 && moveVertical > 0) {//right up
-			playerAngle.eulerAngles = new Vector3(0f, -45f, 0f);
-			MakePlayerSpriteFace(Direction.Right);
-		}
-		else if (moveHorizontal > 0 && moveVertical < 0) {//right down
-			playerAngle.eulerAngles = new Vector3(0f, 45f, 0f);
-			MakePlayerSpriteFace(Direction.Right);
-		}
-		else if (moveHorizontal < 0)	{ // Stab left
-			playerAngle.eulerAngles = new Vector3(0f, -180f, 0f);
-			MakePlayerSpriteFace(Direction.Left);
-		}
-		else if (moveHorizontal > 0) { // Stab right
-			playerAngle.eulerAngles = new Vector3 (0f, 0f, 0f);
-			MakePlayerSpriteFace(Direction.Right);
-		}
-		else if (moveVertical < 0) // Stab down
-			playerAngle.eulerAngles = new Vector3(0f, -270f, 0f);
-		else if (moveVertical > 0) // Stab up
-			playerAngle.eulerAngles = new Vector3(0f, -90f, 0f);
-
+		
 		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
 		rigidbody.velocity = movement * speed;
-
+		
 		rigidbody.freezeRotation = true;
+	}
+
+	void FixedUpdate() {
+
 	}
 }

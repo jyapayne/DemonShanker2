@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b933d79988a624405b43ff0fb8c3d527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterSprite: {fileID: 21200000}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,9 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3037736f75b53479f5da8bd507b6eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destinations:
-  - {fileID: 0}
-  - {fileID: 0}
   currentDestIndex: 1
 --- !u!136 &13600000
 CapsuleCollider:

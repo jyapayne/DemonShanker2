@@ -6,14 +6,14 @@ public class GameController : MonoBehaviour {
 	public int swigs;
 	public GUIText swigText;
 	public GUIText scoreText;
-	public int patronCount;
+	public int maxPatrons;
 	public float spawnWait;
 	public float startWait;
 	public float waveWait;
-	public GameObject[] patron;
+	public GameObject[] patronObjects;
 
 	private int score = 0;
-	private int patrons = 0;
+	private int patronCounter = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -34,14 +34,14 @@ public class GameController : MonoBehaviour {
 		
 		while (true)
 		{
-			if (patrons < patronCount)
+			if (patronCounter < maxPatrons)
 			{
-				Vector3 spawnPosition = new Vector3 (40f, 2.5f, 10f);
+				Vector3 spawnPosition = new Vector3 (8f, 9.7f, -3f);
 				Quaternion spawnRotation = Quaternion.identity;
 
-				GameObject patron = Instantiate (patron[Random.Range (0, patron.Length)], spawnPosition, spawnRotation);
+				Instantiate (patronObjects[Random.Range (0, patronObjects.Length-1)], spawnPosition, spawnRotation);
 
-				patrons++;
+				patronCounter++;
 				
 				yield return new WaitForSeconds (spawnWait);
 			}
@@ -58,11 +58,13 @@ public class GameController : MonoBehaviour {
 	public void AddScore() {
 		score += 100;
 		UpdateScoreText ();
+		patronCounter--;
 	}
 
 	public void DetractScore() {
 		score -= 150;
 		UpdateScoreText ();
+		patronCounter--;
 	}
 
 	void UpdateSwigText() {
