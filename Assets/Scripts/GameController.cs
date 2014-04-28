@@ -39,7 +39,7 @@ public class GameController : MonoBehaviour {
 				Vector3 spawnPosition = new Vector3 (20f, 3f, 9f);
 				Quaternion spawnRotation = Quaternion.identity;
 
-				Instantiate (patronObjects[Random.Range (0, patronObjects.Length-1)], spawnPosition, spawnRotation);
+				Instantiate (patronObjects[Random.Range (0, patronObjects.Length)], spawnPosition, spawnRotation);
 
 				patronCounter++;
 				
