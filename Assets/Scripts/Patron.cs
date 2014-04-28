@@ -23,7 +23,7 @@ public class Patron : MonoBehaviour {
 			gameController.currentNumberOfDemons++;
 		}
 	}
-
+	
 	void OnTriggerEnter(Collider other) {
 		//Instantiate(explosion, transform.position, transform.rotation);
 		if (other.tag == "Shank") 

@@ -206,6 +206,7 @@ MonoBehaviour:
   demonHead: {fileID: 21200002}
   demonDeath: {fileID: 8300000, guid: 510757768cf12453587e7098af49b584, type: 3}
   patronDeath: {fileID: 8300000, guid: d67f8f47c42e54a8482fe86b8c35533e, type: 3}
+  obj: {fileID: 100004}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
