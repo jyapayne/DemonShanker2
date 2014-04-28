@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour {
 	public float waveWait;
 	public GameObject[] patronObjects;
 
+	public int currentNumberOfDemons = 0;
+
 	public GUIText shankYouText;
 	public GUIText gameOverText;
 	public GUIText restartText;
@@ -86,6 +88,7 @@ public class GameController : MonoBehaviour {
 		score += 100;
 		UpdateScoreText ();
 		patronCounter--;
+		currentNumberOfDemons--;
 	}
 
 	public void DetractScore() {

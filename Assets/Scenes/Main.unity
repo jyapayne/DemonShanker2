@@ -2489,10 +2489,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc84b14a55660b643805ae0f1878c40b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swigs: 10
+  swigs: 20
   swigText: {fileID: 493161367}
   scoreText: {fileID: 621151321}
-  maxPatrons: 10
+  maxPatrons: 20
   spawnWait: .5
   startWait: 1
   waveWait: 1

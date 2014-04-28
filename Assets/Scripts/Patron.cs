@@ -18,8 +18,10 @@ public class Patron : MonoBehaviour {
 		else
 			Debug.Log("Cannot find GameController script.");
 
-		if (Random.value > 0.6)
+		if (Random.value > 0.6 && gameController.currentNumberOfDemons < (gameController.maxPatrons / 4)) {
 			isDemon = true;
+			gameController.currentNumberOfDemons++;
+		}
 	}
 
 	void OnTriggerEnter(Collider other) {
