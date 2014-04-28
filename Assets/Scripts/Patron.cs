@@ -24,7 +24,10 @@ public class Patron : MonoBehaviour {
 		if (other.tag == "Shank") 
 		{
 			//Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
+			//gameObject.audio.Play ();
 			Destroy(gameObject);
+
+
 			if(isDemon)
 				gameController.AddScore ();
 			else
