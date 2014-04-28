@@ -79,14 +79,22 @@ public class PlayerController : MonoBehaviour {
 			animator.SetBool("isWalkingUp", false);
 		}
 
-		if (moveHorizontal < 0 && moveVertical > 0) // left up
+		if (moveHorizontal < 0 && moveVertical > 0) { // left up
 			playerAngle.eulerAngles = new Vector3(0f, -135, 0f);
-		else if (moveHorizontal < 0 && moveVertical < 0) // left down
+			MakePlayerSpriteFace(Direction.Left);
+		}
+		else if (moveHorizontal < 0 && moveVertical < 0) {// left down
 			playerAngle.eulerAngles = new Vector3(0f, -225f, 0f);
-		else if (moveHorizontal > 0 && moveVertical > 0) //right up
+			MakePlayerSpriteFace(Direction.Left);
+		}
+		else if (moveHorizontal > 0 && moveVertical > 0) {//right up
 			playerAngle.eulerAngles = new Vector3(0f, -45f, 0f);
-		else if (moveHorizontal > 0 && moveVertical < 0) //right down
+			MakePlayerSpriteFace(Direction.Right);
+		}
+		else if (moveHorizontal > 0 && moveVertical < 0) {//right down
 			playerAngle.eulerAngles = new Vector3(0f, 45f, 0f);
+			MakePlayerSpriteFace(Direction.Right);
+		}
 		else if (moveHorizontal < 0)	{ // Stab left
 			playerAngle.eulerAngles = new Vector3(0f, -180f, 0f);
 			MakePlayerSpriteFace(Direction.Left);
