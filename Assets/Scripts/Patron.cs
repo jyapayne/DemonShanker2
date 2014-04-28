@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Patron : MonoBehaviour {
 	public Renderer characterSprite;
+	public Renderer demonHead;
 	public AudioClip demonDeath;
 	public AudioClip patronDeath;
 
@@ -39,6 +40,7 @@ public class Patron : MonoBehaviour {
 
 		if (other.tag == "VVAura" && isDemon) {
 			characterSprite.renderer.material.color = Color.red;
+			demonHead.renderer.enabled = true;
 		}
 	}
 }

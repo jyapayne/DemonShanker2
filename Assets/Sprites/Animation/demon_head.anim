@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: poser_walk
+  m_Name: demon_head
   serializedVersion: 4
   m_AnimationType: 2
   m_Compressed: 0
@@ -18,13 +18,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: 0d3c405841214de46abddb0ee8bffb88, type: 3}
+      value: {fileID: 21300000, guid: 36025b30706e16046aa7e291e5eb7c76, type: 3}
     - time: .0833333358
-      value: {fileID: 21300002, guid: 0d3c405841214de46abddb0ee8bffb88, type: 3}
+      value: {fileID: 21300002, guid: 36025b30706e16046aa7e291e5eb7c76, type: 3}
     - time: .166666672
-      value: {fileID: 21300004, guid: 0d3c405841214de46abddb0ee8bffb88, type: 3}
+      value: {fileID: 21300004, guid: 36025b30706e16046aa7e291e5eb7c76, type: 3}
     - time: .25
-      value: {fileID: 21300006, guid: 0d3c405841214de46abddb0ee8bffb88, type: 3}
+      value: {fileID: 21300006, guid: 36025b30706e16046aa7e291e5eb7c76, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
