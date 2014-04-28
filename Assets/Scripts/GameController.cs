@@ -12,20 +12,32 @@ public class GameController : MonoBehaviour {
 	public float waveWait;
 	public GameObject[] patronObjects;
 
+	public GUIText shankYouText;
+	public GUIText gameOverText;
+	public GUIText restartText;
+
 	private int score = 0;
 	private int patronCounter = 0;
+	private bool restart;
+	private int maxSwigs;
 
 	// Use this for initialization
 	void Start () {
+		maxSwigs = swigs;
+
+		restart = false;
+
 		UpdateSwigText ();
 		UpdateScoreText ();
 
 		StartCoroutine (SpawnWaves ());
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
-	
+		if (restart) {
+			if (Input.GetKeyDown(KeyCode.R))
+				Application.LoadLevel(Application.loadedLevel);
+		}
 	}
 
 	IEnumerator SpawnWaves ()
@@ -47,6 +59,21 @@ public class GameController : MonoBehaviour {
 			}
 			
 			yield return new WaitForSeconds (waveWait);
+
+			if (swigs == 0)
+			{
+				yield return new WaitForSeconds (5);
+
+				shankYouText.enabled = true;
+				gameOverText.enabled = true;
+				restartText.enabled = true;
+
+				restart = true;
+
+				GameObject.FindGameObjectWithTag ("Player").SetActive (false);
+
+				break;
+			}
 		}
 	}
 
@@ -68,7 +95,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	void UpdateSwigText() {
-		swigText.text = "Swigs Left: " + swigs;
+		swigText.text = "Swigs Left: " + swigs + " / " + maxSwigs;
 	}
 
 	void UpdateScoreText() {
