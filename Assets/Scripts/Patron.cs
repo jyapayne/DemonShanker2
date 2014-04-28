@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Patron : MonoBehaviour {
 	public Renderer characterSprite;
+	public AudioClip demonDeath;
+	public AudioClip patronDeath;
 
 	private GameController gameController;
 	private bool isDemon = false;
@@ -23,15 +25,16 @@ public class Patron : MonoBehaviour {
 		//Instantiate(explosion, transform.position, transform.rotation);
 		if (other.tag == "Shank") 
 		{
-			//Instantiate (playerExplosion, other.transform.position, other.transform.rotation);
-			//gameObject.audio.Play ();
-			Destroy(gameObject);
-
-
-			if(isDemon)
+			if(isDemon) {
+				AudioSource.PlayClipAtPoint (demonDeath, gameObject.rigidbody.position);
 				gameController.AddScore ();
-			else
+			}
+			else {
+				AudioSource.PlayClipAtPoint (patronDeath, gameObject.rigidbody.position);
 				gameController.DetractScore ();
+			}
+
+			Destroy(gameObject);
 		}
 
 		if (other.tag == "VVAura" && isDemon) {
