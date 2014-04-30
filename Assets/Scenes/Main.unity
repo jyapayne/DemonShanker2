@@ -1903,6 +1903,7 @@ MonoBehaviour:
   shankYouText: {fileID: 644799324}
   gameOverText: {fileID: 973833019}
   restartText: {fileID: 1894191159}
+  patronCounter: 0
 --- !u!4 &1164596950
 Transform:
   m_ObjectHideFlags: 0

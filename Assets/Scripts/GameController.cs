@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour {
 	public GUIText restartText;
 
 	private int score = 0;
-	private int patronCounter = 0;
+	public int patronCounter = 0;
 	private bool restart;
 	private int maxSwigs;
 
@@ -40,6 +40,8 @@ public class GameController : MonoBehaviour {
 			if (Input.GetKeyDown(KeyCode.R))
 				Application.LoadLevel(Application.loadedLevel);
 		}
+
+//		Debug.Log (currentNumberOfDemons + "/" + patronCounter);
 	}
 
 	IEnumerator SpawnWaves ()

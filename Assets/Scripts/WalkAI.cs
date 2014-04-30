@@ -14,6 +14,11 @@ public class WalkAI : MonoBehaviour {
 
 		GameObject poi1 = allPois[Random.Range (0, allPois.Length)];
 		GameObject poi2 = allPois[Random.Range (0, allPois.Length)];
+		while (poi2 == poi1) {
+		 	poi2 = allPois[Random.Range (0, allPois.Length)];
+		}
+
+		Debug.Log (poi1.name + "," + poi2.name);
 
 		destinations = new GameObject[2] {
 			poi1,
